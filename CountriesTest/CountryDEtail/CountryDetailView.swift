@@ -10,6 +10,8 @@ import SwiftUI
 struct CountryDetailView: View {
     let name: String
     @StateObject var viewModel = CountryDetailViewModel()
+    @State var isFavorite: Bool = false
+    var userDefaultManager = UserdefaultsManager()
     
     var body: some View {
         ScrollView(.vertical) {
@@ -34,6 +36,17 @@ struct CountryDetailView: View {
                         }
                     }
                     Spacer()
+                    Button {
+                        userDefaultManager.setFavorite(common: name)
+                        isFavorite.toggle()
+                    } label: {
+                        Image(systemName: isFavorite ? "heart.fill" : "heart")
+                            .resizable()
+                            .frame(width: 60, height: 60)
+                            .padding(.trailing, 40)
+                            .foregroundStyle(.red)
+                    }
+
                 }
                
                 Text(viewModel.countriDetail?.name.common ?? "")
@@ -169,6 +182,7 @@ struct CountryDetailView: View {
             }
         }
         .onAppear {
+            isFavorite = userDefaultManager.getFavorite(common: name)
             viewModel.fetchCountryDetail(name: self.name)
         }
     }

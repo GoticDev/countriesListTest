@@ -23,13 +23,13 @@ class CountryDetailViewModel: ObservableObject {
                 self.showAlert = true
                 return
             }
-            do {
-                let json = try JSONDecoder().decode([CountryDetailModel].self, from: data)
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                do {
+                    let json = try JSONDecoder().decode([CountryDetailModel].self, from: data)
                     self.countriDetail = json.first
+                } catch {
+                    self.showAlert = true
                 }
-            } catch let error {
-                self.showAlert = true
             }
         }.resume()
     }

@@ -20,5 +20,67 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C6B17682-AE2F-49B4-8BE9-F87F930CAE70"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CountriesTest/Utils/UserdefaultManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "setFavorite(common:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B87DD4F8-EF8E-449C-9AEB-6131F4962CF6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CountriesTest/Utils/UserdefaultManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "saveCountries(countries:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B87DD4F8-EF8E-449C-9AEB-6131F4962CF6 - fc44e5b52be0a1bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CountriesTest.UserdefaultsManager.saveCountries(countries: Swift.Array&lt;CountriesTest.CountriesListModel&gt;) -&gt; ()"
+                  moduleName = "CountriesTest.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/satoritech262/Desktop/CountriesTest/CountriesTest/Utils/UserdefaultManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36">
+               </Location>
+               <Location
+                  uuid = "B87DD4F8-EF8E-449C-9AEB-6131F4962CF6 - 71db47c04b411cd2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (CountriesTest.CountriesListModel) -&gt; CountriesTest.UDModel in CountriesTest.UserdefaultsManager.saveCountries(countries: Swift.Array&lt;CountriesTest.CountriesListModel&gt;) -&gt; ()"
+                  moduleName = "CountriesTest.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/satoritech262/Desktop/CountriesTest/CountriesTest/Utils/UserdefaultManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

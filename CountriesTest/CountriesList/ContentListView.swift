@@ -11,6 +11,8 @@ struct ContentListView: View {
     
     @State var searchText: String = .empty
     @StateObject var viewModel = CountriesListViewModel()
+    var userDefaultManager = UserdefaultsManager()
+    @State var isFavorite = false
     
     private var filteredCountiesList: [CountriesListModel] {
         if searchText.isEmpty {
@@ -45,9 +47,14 @@ struct ContentListView: View {
                             }
                         }
                         VStack(alignment: .leading) {
-                            Text(countrie.name.common)
-                                .font(.callout)
-                                .fontWeight(.bold)
+                            HStack {
+                                Text(countrie.name.common)
+                                    .font(.callout)
+                                    .fontWeight(.bold)
+                                Spacer()
+                                Image(systemName: userDefaultManager.getFavorite(common: countrie.name.common) ? "heart.fill" : "heart")
+                                    .foregroundStyle(userDefaultManager.getFavorite(common: countrie.name.common) ? .red : .gray)
+                            }
                             Text(countrie.name.official)
                                 .font(.footnote)
                                 .fontWeight(.semibold)
