@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentListView: View {
     
-    @State var searchText: String = ""
+    @State var searchText: String = .empty
     @StateObject var viewModel = CountriesListViewModel()
     
     private var filteredCountiesList: [CountriesListModel] {
@@ -62,6 +62,12 @@ struct ContentListView: View {
             .navigationTitle(Constanst.litTitle)
         }
         .padding()
+        .alert(Constanst.errorMessage, isPresented: $viewModel.showAlert) {
+            Button("OK") {
+                viewModel.showAlert.toggle()
+                viewModel.fetchList()
+            }
+        }
         .onAppear {
             viewModel.fetchList()
         }
@@ -73,7 +79,3 @@ struct ContentListView: View {
 }
 
 
-struct Constanst {
-    static var litTitle = "Countries List"
-    static var uknowed = "uknowed capital"
-}

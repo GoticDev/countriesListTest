@@ -156,14 +156,18 @@ struct CountryDetailView: View {
                     }
                 }
                 .padding(.top, 20)
-                
-                
                 Spacer()
             }
             .padding(.leading, 40)
             .padding(.top, 40)
         }
-        
+        .alert(Constanst.errorMessage, isPresented: $viewModel.showAlert) {
+            Button("OK") {
+                viewModel.showAlert.toggle()
+                viewModel.fetchCountryDetail(name: self.name)
+                
+            }
+        }
         .onAppear {
             viewModel.fetchCountryDetail(name: self.name)
         }

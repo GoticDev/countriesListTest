@@ -1,39 +1,11 @@
 //
-//  CountryDetailViewModel.swift
+//  CountryDetailModel.swift
 //  CountriesTest
 //
 //  Created by Victor Raul De la Torre Anicama on 19/08/25.
 //
 
 import Foundation
-
-class CountryDetailViewModel: ObservableObject {
-    @Published var countriDetail: CountryDetailModel?
-    
-    func fetchCountryDetail(name: String) {
-        let url = "https://restcountries.com/v3.1/name/\(name)?fullText=false"
-        guard let urlRequest = URL(string: url) else {
-            //error
-            return
-        }
-        
-        URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-            guard let data, error == nil else {
-                //error
-                return
-            }
-            do {
-                let json = try JSONDecoder().decode([CountryDetailModel].self, from: data)
-                print(json)
-                DispatchQueue.main.async {
-                    self.countriDetail = json.first
-                }
-            } catch let error {
-                print(error.localizedDescription)
-            }
-        }.resume()
-    }
-}
 
 struct CountryDetailModel: Codable {
     let name: CountryDetailName
